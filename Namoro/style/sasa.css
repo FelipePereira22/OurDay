@@ -1,0 +1,270 @@
+@import url(root.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+     background-color: #fbf5ebcc;
+}
+
+.container-header{
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title-header {
+    font-family: "Great Vibes", cursive;
+    font-size: 4rem;
+    color: var(--cor-titulos);
+    margin-bottom: 5px;
+}
+
+.subtitle-header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--cor-paragrafo);
+}
+
+.contador {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px; /* Espaço vertical e horizontal */
+    font-size: 1.1rem;
+    margin: 30px auto; /* Centraliza e dá espaço */
+    max-width: 90%; /* Evita que fique muito largo em telas grandes */
+    padding: 10px;
+    color: var(--cor-destaque, #D6336C);
+}
+
+.contador span {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex-basis: calc(33.333% - 10px);
+}
+
+.contador strong {
+    display: block;
+    font-size: 2rem; /* Números bem destacados */
+    line-height: 1.1;
+    color: var(--cor-subtitulo, #40053C);
+    font-weight: 700; /* Garante que o número seja mais grosso */
+}
+
+.foto-principal {
+    max-width: 100%;
+    width: 300px;
+    border-radius: 5%; 
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* main */
+
+.timeline {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.title-card {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #242424;
+}
+
+/* --- ESTILO BASE (PARA CELULAR) --- */
+.fotos-grid {
+    display: flex;
+    flex-direction: column; /* 1. UMA COLUNA: empilha as fotos na vertical */
+    gap: 30px; /* 2. ESPAÇAMENTO: um bom espaço entre uma foto e outra */
+    margin-bottom: 50px;
+}
+
+.foto-container {
+    text-align: center;
+    perspective: 1000px;
+    aspect-ratio: 1 / 1;
+}
+
+.foto-container img {
+    width: 100%; /* Imagem ocupa toda a largura disponível */
+    height: 100%;
+    /* A altura agora é proporcional à largura, fica perfeito! */
+    aspect-ratio: 1 / 1; /* Proporção de foto 4:3. Pode mudar para 16/9 ou 1/1 (quadrado) */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--radius);
+    box-shadow: var(--sombra) 0px 2px 4px 0px, var(--radius) 0px 2px 16px 0px;
+}
+
+.legenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 8px;
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    color: var(--cor-legenda);
+    text-shadow: 1px 1px 1px #000, 0 0 5px #000;
+
+
+    /* font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: var(--cor-paragrafo);
+    margin-top: 10px;
+    font-style: italic;
+ */
+}
+
+.linha-divisoria{
+    height: 2px;
+    background-color: var(--destaques);
+}
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--sombra) 0px 19px 38px, var(--sombra) 0px 15px 12px;
+
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.final-msg{
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+.footer-icon svg {
+    fill: var(--sombra);
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+/* EFEITO FLIP ***************************************/
+
+.card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+}
+
+.card.is-flipped{
+    transform: rotateY(180deg)
+}
+
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-back {
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    color: var(--cor-legenda-back);
+    border: 2px solid var(--radius); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+
+.card-back::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--cor-secundaria);
+    filter: blur(15px);
+    margin: -3px;
+}
+
+.mensagem-secreta {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 0.9rem;
+}
+
+
+/* MEDIA QUERIES *************************************/
+
+@media (min-width: 600px) {
+    .container-header{
+        margin-bottom: 3.8rem;
+    }
+
+    .fotos-grid {
+        flex-direction: row;  
+        flex-wrap: wrap;     
+        justify-content: center; 
+        gap: 20px;            
+    }
+
+    .foto-container {
+        flex-basis: calc(50% - 10px); /* 2 colunas */
+    }
+
+    .linha-divisoria{
+        height: 2px;
+        background-color: var(--destaques);
+        margin-bottom: 3rem;
+}
+}
+
+
+/* --- REGRA PARA DESKTOPS (3 ou 4 COLUNAS) --- */
+@media (min-width: 900px) {
+    .foto-container {
+        flex-basis: calc(33.333% - 14px); /* 3 colunas */
+    }
+
+    .linha-divisoria{
+        height: 2px;
+        background-color: var(--destaques);
+}
+}
+
+@media (min-width: 1200px) {
+    .foto-container {
+        flex-basis: calc(25% - 15px); /* 4 colunas em telas bem grandes */
+    }
+
+    .linha-divisoria{
+        height: 2px;
+        background-color: var(--destaques);
+}
+}
