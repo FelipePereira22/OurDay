@@ -48,3 +48,33 @@ todosOsCards.forEach(function (card) {
         card.classList.toggle('is-flipped');
     });
 });
+// --- LÓGICA PARA ABRIR E FECHAR O MODAL (CONVITE) ---
+// Seleciona os elementos que vamos usar
+var coracaoFooter = document.querySelector('.footer-icon');
+var modalOverlay = document.getElementById('modal-convite');
+var modalFecharBtn = document.getElementById('modal-fechar');
+// Verifica se todos os elementos existem antes de adicionar os eventos
+if (coracaoFooter && modalOverlay && modalFecharBtn) {
+    // Função para abrir o modal
+    var abrirModal_1 = function () {
+        modalOverlay.classList.add('visible');
+    };
+    // Função para fechar o modal
+    var fecharModal_1 = function () {
+        modalOverlay.classList.remove('visible');
+    };
+    // Adiciona o evento de clique no coração
+    coracaoFooter.addEventListener('click', function (event) {
+        event.preventDefault(); // Impede qualquer comportamento padrão
+        abrirModal_1();
+    });
+    // Adiciona o evento de clique no botão de fechar
+    modalFecharBtn.addEventListener('click', fecharModal_1);
+    // Adiciona o evento de clique no fundo escuro (overlay) para fechar
+    modalOverlay.addEventListener('click', function (event) {
+        // Só fecha se o clique for no overlay mesmo, e não no conteúdo do modal
+        if (event.target === modalOverlay) {
+            fecharModal_1();
+        }
+    });
+}

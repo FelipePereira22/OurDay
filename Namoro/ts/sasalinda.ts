@@ -60,3 +60,42 @@ todosOsCards.forEach(card => {
         card.classList.toggle('is-flipped')
     })
 })
+
+
+// --- LÓGICA PARA ABRIR E FECHAR O MODAL (CONVITE) ---
+
+// Seleciona os elementos que vamos usar
+const coracaoFooter = document.querySelector('.footer-icon');
+const modalOverlay = document.getElementById('modal-convite');
+const modalFecharBtn = document.getElementById('modal-fechar');
+
+// Verifica se todos os elementos existem antes de adicionar os eventos
+if (coracaoFooter && modalOverlay && modalFecharBtn) {
+    
+    // Função para abrir o modal
+    const abrirModal = () => {
+        modalOverlay.classList.add('visible');
+    }
+
+    // Função para fechar o modal
+    const fecharModal = () => {
+        modalOverlay.classList.remove('visible');
+    }
+
+    // Adiciona o evento de clique no coração
+    coracaoFooter.addEventListener('click', (event) => {
+        event.preventDefault(); // Impede qualquer comportamento padrão
+        abrirModal();
+    });
+
+    // Adiciona o evento de clique no botão de fechar
+    modalFecharBtn.addEventListener('click', fecharModal);
+
+    // Adiciona o evento de clique no fundo escuro (overlay) para fechar
+    modalOverlay.addEventListener('click', (event) => {
+        // Só fecha se o clique for no overlay mesmo, e não no conteúdo do modal
+        if (event.target === modalOverlay) {
+            fecharModal();
+        }
+    });
+}
