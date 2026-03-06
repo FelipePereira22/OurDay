@@ -109,47 +109,23 @@ body{
     border: 2px solid var(--radius);
     box-shadow: var(--sombra) 0px 2px 4px 0px, var(--radius) 0px 2px 16px 0px;
 }
-
-.foto-container1 {
+.foto-container-momentos {
     text-align: center;
     perspective: 1000px;
     aspect-ratio: 16 / 9;    
-    flex-basis: 100% !important;
-    max-width: 900px;
 }
 
-.foto-container1 img {
+.foto-container-momentos img {
     width: 100%; /* Imagem ocupa toda a largura disponível */
     height: 100%;
     /* A altura agora é proporcional à largura, fica perfeito! */
-    aspect-ratio: 1 / 1; /* Proporção de foto 4:3. Pode mudar para 16/9 ou 1/1 (quadrado) */
+    aspect-ratio: 16 / 9; /* Proporção de foto 4:3. Pode mudar para 16/9 ou 1/1 (quadrado) */
     object-fit: cover;
     border-radius: 10px;
     border: 2px solid var(--radius);
     box-shadow: var(--sombra) 0px 2px 4px 0px, var(--radius) 0px 2px 16px 0px;
 }
 
-.foto-container-video {
-    flex-basis: 100% !important;
-    max-width: 900px;
-    margin: 0 auto;
-    perspective: 1000px;
-}
-
-.foto-container-video .card {
-    aspect-ratio: 16 / 9; /* Força o card do vídeo a ser retangular */
-}
-
-/* Estilo da Tag Video */
-.foto-container-video video {
-    width: 100%; 
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid var(--radius);
-    box-shadow: var(--sombra) 0px 2px 4px 0px, var(--radius) 0px 2px 16px 0px;
-    display: block;
-}
 
 
 .legenda {
@@ -361,6 +337,10 @@ footer{
         flex-basis: calc(50% - 10px); /* 2 colunas */
     }
 
+    .foto-container-momentos {
+        flex-basis: calc(50% - 10px); /* 2 colunas */
+    }
+
     .linha-divisoria{
         height: 2px;
         background-color: var(--destaques);
@@ -385,6 +365,10 @@ footer{
         flex-basis: calc(33.333% - 14px); /* 3 colunas */
     }
 
+    .foto-container-momentos {
+        flex-basis: calc(33.333% - 14px); /* 3 colunas */
+    }
+
     .linha-divisoria{
         height: 2px;
         background-color: var(--destaques);
@@ -393,6 +377,10 @@ footer{
 
 @media (min-width: 1200px) {
     .foto-container {
+        flex-basis: calc(25% - 15px); /* 4 colunas em telas bem grandes */
+    }
+
+    .foto-container-momentos {
         flex-basis: calc(25% - 15px); /* 4 colunas em telas bem grandes */
     }
 
