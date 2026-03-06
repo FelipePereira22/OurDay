@@ -112,13 +112,14 @@ body{
 .foto-container-momentos {
     text-align: center;
     perspective: 1000px;
-    aspect-ratio: 16 / 9;    
+    aspect-ratio: 16 / 9;   
+    max-width: 450px; 
+    width: 100%;
 }
 
 .foto-container-momentos img {
     width: 100%; /* Imagem ocupa toda a largura disponível */
     height: 100%;
-    /* A altura agora é proporcional à largura, fica perfeito! */
     aspect-ratio: 16 / 9; /* Proporção de foto 4:3. Pode mudar para 16/9 ou 1/1 (quadrado) */
     object-fit: cover;
     border-radius: 10px;
