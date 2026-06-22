@@ -8,7 +8,7 @@ O projeto foi construído utilizando tecnologias web fundamentais, focando em pe
 
 *   **HTML5:** Estruturação semântica da página.
 *   **CSS3:** Estilização moderna, transições suaves e layout responsivo adaptável para dispositivos móveis.
-*   **JavaScript (ES6+):** Manipulação de eventos, interatividade dos elementos da tela e lógica de exibição das fotos.
+*   **TypeScript:** Manipulação de eventos, interatividade dos elementos da tela e lógica de exibição das fotos.
 
 ## ⚙️ Funcionalidades Principais
 
