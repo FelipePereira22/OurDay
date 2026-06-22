@@ -1,5 +1,7 @@
 # OurDay 💻 ❤️
 
+> 🔗 **[Clique aqui para acessar o projeto no ar](https://felipepereira22.github.io/OurDay/)**
+
 Uma aplicação web interativa e totalmente personalizada desenvolvida como um projeto autoral e afetivo. O objetivo principal foi aplicar conceitos de manipulação do DOM e dinamismo de interface para criar uma experiência visual e interativa de linha do tempo e galeria de fotos.
 
 ## 🚀 Tecnologias Utilizadas
